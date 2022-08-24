@@ -2,7 +2,7 @@
 import { of } from "rxjs";
 import { div, button, h4, img, a } from "@cycle/dom";
 
-export function Navbar(sources) {
+export function Navbar() {
   return {
     DOM: view(),
   };
