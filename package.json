@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "cycle-scripts-es-webpack": "0.3.0"
+    "autoprefixer": "^10.4.8",
+    "cycle-scripts-es-webpack": "0.3.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   },
   "dependencies": {
     "@cycle/dom": "^23.1.0",
     "@cycle/rxjs-run": "^10.5.0",
+    "classnames": "^2.3.1",
     "lib": "^4.3.3",
     "rxjs": "^7.5.6"
   },
@@ -15,7 +19,8 @@
     "start": "cycle-scripts start",
     "test": "cycle-scripts test",
     "build": "cycle-scripts build",
-    "take-off-training-wheels": "cycle-scripts take-off-training-wheels"
+    "take-off-training-wheels": "cycle-scripts take-off-training-wheels",
+    "build-css": "tailwindcss -i ./src/tailwind.css -o ./public/tailwind.css"
   },
   "babel": {
     "presets": [
