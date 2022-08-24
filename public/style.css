@@ -130,5 +130,119 @@ button {
   padding-bottom: 0.75rem /* 12px */;
 }
 
-/* info */
 
+.user-info{
+  width:1100px;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* followers */
+
+#followers {
+  padding:1.5rem;
+  background:white;
+  height:290px;
+  overflow: scroll;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(45px, 1fr));
+  gap: 1.25rem 1rem;
+  width: 49%;
+  border-radius: 0.25rem;
+ 
+}
+
+.followers-content{
+display: flex;
+align-items: center;
+
+}
+#followers img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+}
+#followers .text {
+  margin-left: 0.75rem;
+}
+
+#followers .text > h3 {
+  color: rgb(30 41 59);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+#followers .text > a{
+  color: rgb(100 116 139 );
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+#users{
+  background:white;
+  height:290px;
+  width: 49%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+.users-content{
+  padding:1.5rem;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+.users-content img{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.5rem;
+}
+
+.users-content .text{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.users-content .follow{
+  border-radius: 1rem;
+  border-color: rgb(34 211 238);
+  background-color: transparent;
+  padding:0.25rem 0.75rem;
+}
+.users-content a{
+  color: rgb(34 211 238);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.users-content .text :first-child{
+  font-weight: 600;
+}
+.users-content .text :nth-child(2){
+  color: rgb(100 116 139);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 0.3rem;
+}
+.user-datas{
+  margin: 1rem;
+
+}
+.location{
+  font-size: 1.25rem;
+  color: rgb(21 94 117);
+  margin:1rem  0.25rem;
+  font-weight: 500;
+}
+.bio{ 
+  color: rgb(100 116 139);
+}
+.user-datas a{
+  color: rgb(8 145 178);
+  text-decoration: none;
+}
