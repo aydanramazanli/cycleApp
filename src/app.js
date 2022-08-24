@@ -1,19 +1,18 @@
-// import { div } from "@cycle/dom";
 // import run from '@cycle/rxjs-run'
-// import { of } from "rxjs";
+//  import { of } from "rxjs";
 // import { Observable } from 'rx';
-import { Home } from "./pages/home";
-import { Navbar } from "./companents/navbar";
-//import {styles} from './style/style.css';
+import {Search} from './companents/search';
 import { Login } from "./pages/login";
+import { Navbar } from "./companents/navbar";
 
 export function App(sources) {
   const navbar = Navbar(sources);
   const login = Login(sources);
+  const search = Search(sources);Login(sources);
+  //  const home = Home(sources)
 
   const sinks = {
-    DOM: login.DOM,
-    // navbar.DOM
+    DOM: search.DOM
   };
   return sinks;
 }
