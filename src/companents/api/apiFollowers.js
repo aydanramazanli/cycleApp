@@ -1,7 +1,8 @@
 import { fromFetch } from 'rxjs/fetch';
 import { switchMap, of, catchError } from 'rxjs';
  
-const data$ = fromFetch(`https://api.github.com/users/aydansamedova/followers`).pipe(
+export function ApiFollowers(){
+    const data$ = fromFetch(`https://api.github.com/users/aydansamedova/followers`).pipe(
   switchMap(response => {
     if (response.ok) {
       return response.json();
@@ -16,6 +17,11 @@ const data$ = fromFetch(`https://api.github.com/users/aydansamedova/followers`).
 );
  
 data$.subscribe({
-  next: result => console.log(result),
-  complete: () => console.log('done')
-});
+    next: result => console.log(result),
+    complete: () => console.log('done')
+  });
+
+return data$.subscribe
+}
+
+

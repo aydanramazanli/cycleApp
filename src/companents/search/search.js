@@ -1,10 +1,33 @@
-// import run from '@cycle/rxjs-run';
-import { of } from "rxjs";
+//import run from '@cycle/rxjs-run';
+import { of, pluck,map, fromEvent, pipe, filter, debounceTime,switchMap,  distinctUntilChanged} from "rxjs";
 import { div, button,form, h3, input } from "@cycle/dom";
 
 
-export function Search(sources) {
-  
+export function Search(){
+  const searchInput = document.getElementsByName('#search-input')
+  let mydiv= document.getElementsByName('.example')
+
+  const input$ = fromEvent(searchInput, "input");
+  input$
+  .pipe(
+    pluck("target", "value"),
+    filter((searchValue) => searchValue.length > 2),
+    debounceTime(500),
+    distinctUntilChanged(),
+    switchMap((searchTerm) =>
+    ajax.getJSON(`https://api.github.com/users/login=${searchTerm}`).pipe(
+      catchError((error, caught) => {
+        console.error(`Error: ${error}. Caught ${caught}`);
+        return empty();
+      })
+    )
+  )
+  ).subscribe((response) => {
+    console.log(response);
+    mydiv.innerHTML = response.map((b) => b.name).join("<br>");
+  });
+
+
   return {
     DOM: view(),
   };
@@ -15,9 +38,10 @@ function view() {
     div("#search", [
       div('.content',[
         form(div('.search-input',[
-          input({attr: {type:"text", placeholder:"Search"}}),
-          button("Search")
-        ]  ))
+          input("#search-input", {attr: {type:"text", placeholder:"Search", value:"Search"}}),
+          button(".addBtn","Search")
+        ]  )),
+        div(".exapmle")
       ]), 
       h3("Requests")
     ])

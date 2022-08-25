@@ -18,7 +18,7 @@ export function App( sources) {
   const followers = Followers(sources)
 
   const sinks = {
-    DOM: followers.DOM
+    DOM: search.DOM
   };
   return sinks;
 }
