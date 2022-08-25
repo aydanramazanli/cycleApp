@@ -1,19 +1,16 @@
-// import run from '@cycle/rxjs-run';
-import { of } from 'rxjs';
-import { div } from '@cycle/dom';
-import {navbar} from '../companents/navbar'
 
-export function Home(sources) {
+// import run from '@cycle/rxjs-run';
+import { of } from "rxjs";
+import { div} from "@cycle/dom";
+
+export function Home() {
   return {
-    DOM: view()
+    DOM: view(),
   };
 }
 
-
-function view(){
- 
-
+function view() {
   return of(
-    div('home companent')
-  );
+    div("navbar")
+  )
 }

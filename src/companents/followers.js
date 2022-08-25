@@ -2,7 +2,10 @@
 import { of } from 'rxjs';
 import { div, article, h3, img, a, p } from '@cycle/dom';
 
-export function Followers() {
+
+
+export function Followers(data$) {
+  console.log(data$)
   return {
     DOM: view()
   };
