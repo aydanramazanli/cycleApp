@@ -1,7 +1,7 @@
 import { fromFetch } from 'rxjs/fetch';
 import { switchMap, of, catchError } from 'rxjs';
  
-const data$ = fromFetch(`https://api.github.com/${users}/followers`).pipe(
+const data$ = fromFetch(`https://api.github.com/users/aydansamedova/followers`).pipe(
   switchMap(response => {
     if (response.ok) {
       return response.json();
